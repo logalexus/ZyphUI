@@ -22,7 +22,7 @@ namespace Assets.ZyphUI.Screens
         public override void Close()
         {
             base.Close();
-            transition.CloseAnim(callback: () => { });
+            transition.CloseAnim();
         }
 
     }

@@ -35,7 +35,7 @@ namespace Assets.ZyphUI.ScreensTransition
             _canvasGroup.interactable = false;
         }
 
-        public virtual void CloseAnim(TweenCallback callback)
+        public virtual void CloseAnim(TweenCallback callback = null)
         {
             _canvasGroup.interactable = false;
 

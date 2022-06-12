@@ -8,7 +8,7 @@ namespace Assets.ZyphUI.PopUps
         protected RectTransform _screenTransorm;
         protected CanvasGroup _canvasGroup;
 
-        public Action OnClosed;
+        public Action Closed;
 
         protected virtual void Awake()
         {
@@ -37,7 +37,7 @@ namespace Assets.ZyphUI.PopUps
         {
             _canvasGroup.alpha = 0;
             _canvasGroup.blocksRaycasts = false;
-            OnClosed.Invoke();
+            Closed.Invoke();
         }
 
 

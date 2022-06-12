@@ -44,7 +44,7 @@ namespace Assets.ZyphUI
 
             var popup = GetPopUp<T>();
             popup.Open(callback);
-            popup.OnClosed += () => _activeScreen.SetInteractable(true);
+            popup.Closed += () => _activeScreen.SetInteractable(true);
         }
 
         public void OpenPopUp(BasePopUp popup, Action callback)
@@ -52,7 +52,7 @@ namespace Assets.ZyphUI
             _activeScreen?.SetInteractable(false);
 
             popup.Open(callback);
-            popup.OnClosed += () => _activeScreen.SetInteractable(true);
+            popup.Closed += () => _activeScreen.SetInteractable(true);
         }
 
         public T GetPopUp<T>() where T : BasePopUp
