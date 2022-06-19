@@ -28,6 +28,7 @@ namespace Assets.ZyphUI.Screens
                 throw new Exception("No previous screen");
 
             _activeScreen?.Close();
+            _activeScreen = _screensStack.Pop();
         }
 
 
