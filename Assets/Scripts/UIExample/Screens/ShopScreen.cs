@@ -1,16 +1,14 @@
-using Assets.ZyphUI.Screens;
-using System;
+﻿using Assets.ZyphUI.Screens;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.UIExample.Screens
 {
-    public class MainMenuScreen : BaseScreen
+    public class ShopScreen : BaseScreen
     {
-        [SerializeField] Button playButton;
-        [SerializeField] Button shopButton;
+        [SerializeField] Button backButton;
 
-        private const string _animationnName = "MainMenuScreenAnimation";
+        private const string _animationnName = "ShopScreenAnimation";
         private UIController _uiController;
 
         public override void Init(BaseUIController uiController)
@@ -18,10 +16,8 @@ namespace Assets.Scripts.UIExample.Screens
             base.Init(uiController);
             _uiController = uiController as UIController;
 
-            playButton.onClick.AddListener(_uiController.OpenGamePlayScreen);
-            shopButton.onClick.AddListener(_uiController.OpenShopScreen);
+            backButton.onClick.AddListener(_uiController.OpenPreviousScreen);
         }
-
 
         public override void Open()
         {

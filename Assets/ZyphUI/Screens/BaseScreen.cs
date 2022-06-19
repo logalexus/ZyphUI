@@ -2,41 +2,19 @@ using UnityEngine;
 
 namespace Assets.ZyphUI.Screens
 {
-    [RequireComponent(typeof(CanvasGroup))]
-    public class BaseScreen : MonoBehaviour
+    [RequireComponent(typeof(CanvasGroup), typeof(Animation))]
+    public abstract class BaseScreen : MonoBehaviour
     {
-        protected RectTransform _screenTransorm;
-        protected CanvasGroup _canvasGroup;
+        protected Animation _animation;
 
-
-        protected virtual void Awake()
+        public virtual void Init(BaseUIController uiController)
         {
-            _screenTransorm = GetComponent<RectTransform>();
-            _canvasGroup = GetComponent<CanvasGroup>();
-
-            _canvasGroup.alpha = 0;
-            _canvasGroup.blocksRaycasts = false;
-
+            _animation = GetComponent<Animation>();
+            Close();
         }
 
-        public virtual void Open()
-        {
-            _canvasGroup.alpha = 1;
-            _canvasGroup.blocksRaycasts = true;
+        public abstract void Open();
 
-        }
-
-        public virtual void Close()
-        {
-            _canvasGroup.alpha = 0;
-            _canvasGroup.blocksRaycasts = false;
-
-        }
-
-        public void SetInteractable(bool value)
-        {
-            _canvasGroup.interactable = value;
-            _canvasGroup.blocksRaycasts = value;
-        }
+        public abstract void Close();
     }
 }
