@@ -22,14 +22,12 @@ namespace Assets.ZyphUI.Screens
         /// Открывает предыдущий экран
         /// </summary>
         /// <exception cref="Exception"></exception>
-        public void OpenPreviousScreen()
+        public void BackToPreviousScreen()
         {
             if (_screensStack.Count == 0)
                 throw new Exception("No previous screen");
 
             _activeScreen?.Close();
-            BaseScreen previousScreen = _screensStack.Pop();
-            OpenScreenOverAll(previousScreen);
         }
 
 
@@ -41,9 +39,9 @@ namespace Assets.ZyphUI.Screens
         public void OpenScreenOverAll(BaseScreen screen) 
         {
             _activeScreen = screen;
+            _activeScreen.transform.SetZ(_screensStack.Count());
             _activeScreen.Open();
             _screensStack.Push(_activeScreen);
-            _activeScreen.transform.SetZ(_screensStack.Count());
         }
 
 
