@@ -12,11 +12,8 @@ namespace Assets.Scripts.UIExample.Screens
         private const string _animationnName = "GamePlayScreenAnimation";
         private UIController _uiController; 
 
-        public override void Init(BaseUIController uiController)
+        public void Init(UIController uiController)
         {
-            base.Init(uiController);
-            _uiController = uiController as UIController;
-
             menuButton.onClick.AddListener(_uiController.OpenMainMenu);
         }
 

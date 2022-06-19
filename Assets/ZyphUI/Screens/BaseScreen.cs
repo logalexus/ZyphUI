@@ -7,10 +7,9 @@ namespace Assets.ZyphUI.Screens
     {
         protected Animation _animation;
 
-        public virtual void Init(BaseUIController uiController)
+        private void Awake()
         {
             _animation = GetComponent<Animation>();
-            Close();
         }
 
         public abstract void Open();

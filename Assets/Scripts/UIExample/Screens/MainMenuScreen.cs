@@ -13,13 +13,11 @@ namespace Assets.Scripts.UIExample.Screens
         private const string _animationnName = "MainMenuScreenAnimation";
         private UIController _uiController;
 
-        public override void Init(BaseUIController uiController)
+        public void Init(UIController uiController)
         {
-            base.Init(uiController);
-            _uiController = uiController as UIController;
 
-            playButton.onClick.AddListener(_uiController.OpenGamePlayScreen);
-            shopButton.onClick.AddListener(_uiController.OpenShopScreen);
+            playButton.onClick.AddListener(uiController.OpenGamePlayScreen);
+            shopButton.onClick.AddListener(uiController.OpenShopScreen);
         }
 
 
