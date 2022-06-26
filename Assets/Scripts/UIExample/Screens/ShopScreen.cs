@@ -1,4 +1,5 @@
 ﻿using Assets.ZyphUI.Screens;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,25 +9,12 @@ namespace Assets.Scripts.UIExample.Screens
     {
         [SerializeField] Button backButton;
 
-        private const string _animationnName = "ShopScreenAnimation";
-        private UIController _uiController;
+        public event Action BackClick;
 
-        public override void Init(BaseUIController uiController)
+        public void Init()
         {
-            base.Init(uiController);
-            _uiController = uiController as UIController;
-
-            backButton.onClick.AddListener(_uiController.OpenPreviousScreen);
+            backButton.onClick.AddListener(()=> BackClick?.Invoke());
         }
 
-        public override void Open()
-        {
-            _animation.Play(_animationnName);
-        }
-
-        public override void Close()
-        {
-            _animation.Rewind(_animationnName);
-        }
     }
 }

@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7bfd8a093e5b6b4394e56c6c546ecdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openClip: {fileID: 7400000, guid: 6eb4038e21fd861468a20c92661646b5, type: 2}
+  closeClip: {fileID: 7400000, guid: 670d51c82df7b2c418f6d863d9dd6e53, type: 2}
   menuButton: {fileID: 695818962}
 --- !u!224 &8615013
 RectTransform:
@@ -186,8 +188,7 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 670d51c82df7b2c418f6d863d9dd6e53, type: 2}
+  m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -1289,6 +1290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5d8b0ce45c9384eaae620c5311a267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openClip: {fileID: 7400000, guid: 3b851433288be98419b21394323e696d, type: 2}
+  closeClip: {fileID: 7400000, guid: c9a771ae117b7f54fa38321fe7017e3a, type: 2}
   playButton: {fileID: 1464046025}
   shopButton: {fileID: 32966087}
 --- !u!225 &1134341527
@@ -1313,8 +1316,7 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 3b851433288be98419b21394323e696d, type: 2}
+  m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -1508,6 +1510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1467c8cf3465034381d3058fb783ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openClip: {fileID: 7400000, guid: c55d6fa5a0bd0b54aa60f186dfbfbc51, type: 2}
+  closeClip: {fileID: 7400000, guid: f282f61963ade264d8ba6f97e1ebf95f, type: 2}
   backButton: {fileID: 691514981}
 --- !u!224 &1432396799
 RectTransform:
@@ -1539,8 +1543,7 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: c55d6fa5a0bd0b54aa60f186dfbfbc51, type: 2}
+  m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0

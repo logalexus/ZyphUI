@@ -15,9 +15,16 @@ namespace Assets.Scripts.UIExample
         public override void Init()
         {
             base.Init();
-            mainMenuScreen.Init(this);
-            gamePlayScreen.Init(this);
-            shopScreen.Init(this);
+            mainMenuScreen.Init();
+            gamePlayScreen.Init();
+            shopScreen.Init();
+
+            mainMenuScreen.PlayClick += OpenGamePlayScreen;
+            mainMenuScreen.ShopClick += OpenShopScreen;
+            gamePlayScreen.BackToMenuClick += OpenMainMenu;
+            shopScreen.BackClick += OpenPreviousScreen;
+
+            CloseAllScreens();
         }
 
         public void OpenMainMenu()

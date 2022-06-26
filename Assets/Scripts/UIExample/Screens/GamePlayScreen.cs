@@ -1,7 +1,10 @@
 ﻿using Assets.ZyphUI.Screens;
 using Assets.Scripts.UIExample.Screens;
 using UnityEngine;
+using System.Linq;
+using System.Collections;
 using UnityEngine.UI;
+using System;
 
 namespace Assets.Scripts.UIExample.Screens
 {
@@ -9,25 +12,11 @@ namespace Assets.Scripts.UIExample.Screens
     {
         [SerializeField] Button menuButton;
 
-        private const string _animationnName = "GamePlayScreenAnimation";
-        private UIController _uiController; 
+        public event Action BackToMenuClick;
 
-        public override void Init(BaseUIController uiController)
+        public void Init()
         {
-            base.Init(uiController);
-            _uiController = uiController as UIController;
-
-            menuButton.onClick.AddListener(_uiController.OpenMainMenu);
-        }
-
-        public override void Open()
-        {
-            _animation.Play(_animationnName);
-        }
-
-        public override void Close()
-        {
-            _animation.Rewind(_animationnName);
+            menuButton.onClick.AddListener(() => BackToMenuClick?.Invoke());
         }
     }
 }
