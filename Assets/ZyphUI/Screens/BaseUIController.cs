@@ -10,7 +10,6 @@ namespace Assets.ZyphUI.Screens
     {
         private BaseScreen _activeScreen;
         private Stack<BaseScreen> _screensStack;
-        private int _defaultZ = 0;
 
         public virtual void Init()
         {
@@ -34,8 +33,8 @@ namespace Assets.ZyphUI.Screens
         {
             _activeScreen = screen;
             _activeScreen.Open();
+            _activeScreen.transform.SetAsLastSibling();
             _screensStack.Push(_activeScreen);
-            _activeScreen.transform.SetZ(_screensStack.Count());
         }
 
 
@@ -46,7 +45,6 @@ namespace Assets.ZyphUI.Screens
 
             _activeScreen = screen;
             _activeScreen.Open();
-            _activeScreen.transform.SetZ(_defaultZ);
 
             _screensStack.Push(_activeScreen);
         }
@@ -54,10 +52,7 @@ namespace Assets.ZyphUI.Screens
         public void CloseAllScreens()
         {
             foreach (var openedScreen in _screensStack)
-            {
                 openedScreen.Close();
-                openedScreen.transform.SetZ(_defaultZ);
-            }
             _screensStack.Clear();
         }
     }
